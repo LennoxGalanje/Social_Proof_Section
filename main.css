@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+/* || REST */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h4 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --BODY-BG: #fff;
+  --HEADING-CLR: #512051;
+  --HEADING-DESC-CLR: #927b91;
+  --PLATFORM-CLR: #512051;
+  --RATING-ITEM-BG: #f7f2f7;
+  --TEST-CARD-BG: #512051;
+  --CARD-NAME-CLR: #fff;
+  --CARD-TEXT-CLR: #fff;
+  --ROLE-CLR: #ee69a4;
+
+  /* TYPOGRAPHY */
+  --FF: "League Spartan", serif;
+
+  /* MOBILE-TYPOGRAPHY */
+  --HEADING-MOB: bold 2.5rem/2rem var(--FF);
+  --HEADING-LS-MOB: -0.0894rem;
+  --HEADING-DESC-MOB: 500 1.1875rem/1.5625rem var(--FF);
+  --HEADING-DESC-LS-MOB: -0.0394rem;
+  --PLATFORM-MOB: bold 1.0625rem var(--FF);
+  --CARD-NAME-MOB: bold 1.0625rem var(--FF);
+  --CARD-TEXT-MOB: 500 1.0625rem/1.375rem var(--FF);
+  --CARD-TEXT-LS-MOB: -0.0187rem;
+  --ROLE-MOB: normal 1.0625rem var(--FF);
+
+  /* DESKTOP-TYPOGRAPHY */
+  --HEADING-DSK: bold 3.5rem/3rem var(--FF);
+  --HEADING-LS-DSK: -0.125rem;
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -625rem;
+}
+
+.nowrap {
+  /* white-space: nowrap; */
+  text-wrap: wrap;
+}
+
+.center {
+  text-align: center;
+}
+
+/* MOBILE FIRST DESIGN */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+  font-size: 1rem; /* 16px = 1rem */
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+
+  background-color: var(--BODY-BG);
+  background-image: url("./images/bg-pattern-top-mobile.svg"),
+  url("./images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 374px 232px, 1085px 673px;
+  background-position: top left, bottom center;
+}
+
+/* || TESTIMONIAL */
+.testimonial {
+  margin: 5.125rem auto 6.1875rem;
+}
+
+/* || TESTIMONIAL-HEADER */
+.testimonial__header {
+  display: flex;
+  flex-flow: column;
+  gap: 2.4375rem;
+  align-items: center;
+  margin-bottom: 3.0625rem;
+}
+
+.testimonial__header-text {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1.0625rem;
+}
+
+.testimonial__heading {
+  max-width: 327px;
+  font: var(--HEADING-MOB);
+  color: var(--HEADING-CLR);
+  letter-spacing: var(--HEADING-LS-MOB);
+}
+
+.testimonial__header-description {
+  max-width: 325px;
+  font: var(--HEADING-DESC-MOB);
+  color: var(--HEADING-DESC-CLR);
+  letter-spacing: var(--HEADING-DESC-LS-MOB);
+}
+
+.testimonial__ratings {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.testimonial__rating-item {
+  padding: 1rem auto;
+  width: 327px;
+  height: 78px;
+  background-color: var(--RATING-ITEM-BG);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9375rem;
+  border-radius: 8px;
+}
+
+.testimonial__rating-stars::after {
+  content: url("./images/icon-star.svg");
+  display: inline-block;
+  width: 116.55px;
+  height: 15.77px;
+  align-items: center;
+
+  background-image: url("./images/icon-star.svg"), url("./images/icon-star.svg"),
+    url("./images/icon-star.svg"), url("./images/icon-star.svg"),
+    url("./images/icon-star.svg");
+
+  background-position: 0 0, 25px 0, 50px 0, 75px 0, 100px 0;
+  background-repeat: no-repeat;
+}
+
+.testimonial__rating-platform {
+  font: var(--PLATFORM-MOB);
+  color: var(--PLATFORM-CLR);
+}
+
+/* || TESTIMONIAL-MAIN */
+.testimonial__main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial__card {
+  width: 327px;
+  height: 248px;
+  background-color: var(--TEST-CARD-BG);
+  padding: 2.5rem 2rem 2.1875rem;
+  border-radius: 8px;
+}
+
+.testimonial__card-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.4375rem;
+  margin-bottom: 1.4375rem;
+}
+
+.testimonial__avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+}
+
+.testimonial__card-name {
+  font: var(--CARD-NAME-MOB);
+  color: var(--CARD-NAME-CLR);
+  margin-bottom: 0.25rem;
+}
+
+.testimonial__card-role {
+  font: var(--ROLE-MOB);
+  color: var(--ROLE-CLR);
+}
+
+.testimonial__card-text {
+  color: var(--CARD-TEXT-CLR);
+  font: var(--CARD-TEXT-MOB);
+  letter-spacing: var(--CARD-TEXT-LS-MOB);
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  body {
+    background-image: url("./images/bg-pattern-top-desktop.svg"),
+    url("./images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 584px 362px, 1085px 673px;
+    background-position: top left, bottom right;
+  }
+
+  /* || TESTIMONIAL */
+  .testimonial {
+    margin: 7.375rem auto 6.25rem;
+  }
+
+  /* || TESTIMONIAL-HEADER */
+  .testimonial__header {
+    flex-flow: row;
+    gap: 7.8125rem;
+    margin-bottom: 4.4375rem;
+  }
+
+  .testimonial__header-text {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .testimonial__heading {
+    max-width: 445px;
+    font: var(--HEADING-DSK);
+    letter-spacing: var(--HEADING-LS-DSK);
+    text-align: left;
+  }
+
+  .testimonial__header-description {
+    max-width: 445px;
+    text-align: left;
+  }
+
+  .testimonial__rating-item {
+    padding: 1.25rem 0rem 1.25rem 2rem;
+    width: 445px;
+    height: 56px;
+    flex-flow: row;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  .testimonial__rating--top {
+    margin-right: 5.9375rem;
+    padding-right: 4.9375rem;
+  }
+
+  .testimonial__rating--middle {
+    margin-right: 2.9375rem;
+    padding-right: 2.9375rem;
+  }
+
+  .testimonial__rating--bottom {
+    padding-right: 4.75rem;
+  }
+
+  /* || TESTIMONIAL-MAIN */
+  .testimonial__main {
+    flex-flow: row;
+    align-items: flex-start;
+    gap: 1.875rem;
+  }
+
+  .testimonial__card {
+    width: 350px;
+    height: 234px;
+  }
+
+  .testimonial__card--middle {
+    margin-top: 1rem;
+  }
+
+  .testimonial__card--bottom {
+    margin-top: 2rem;
+  }
+
+  .testimonial__card-profile {
+    margin-bottom: 31px;
+  }
+}
